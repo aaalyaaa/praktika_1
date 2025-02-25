@@ -82,7 +82,7 @@ W, H = 330, 390
 L, T = (window.winfo_screenwidth()-W)//2, (window.winfo_screenheight()-H)//2
 window.geometry(f"{W}x{H}+{L}+{T}")
 window.title('Калькулятор')
-entry = Entry(bg='blue', justify=RIGHT,  font=('Arial', 18, 'bold'))
+entry = Entry(bg='light blue', justify=RIGHT,  font=('Arial', 18, 'bold'))
 entry.grid(row=0, column=0, columnspan=4, sticky="NSEW")
 entry.insert(0, '0')
 buttons = [['%', '√', 'x²', '1/x'], ['СЕ', 'С', '⌫', '÷'], ['7', '8', '9', '×'], ['4', '5', '6', '-'], ['1', '2', '3', '+'], ['±', '0', ',', '=']]
@@ -92,5 +92,5 @@ for x in range(7):
         for y in range(4):
             command = lambda t=buttons[x-1][y]: click(t)
             window.columnconfigure(y, weight=1)
-            Button(window, text=buttons[x-1][y], bg='blue', borderwidth=0, font=('Arial', 12, 'bold'), command=command).grid(row=x, column=y, padx=1, pady=1,sticky="NSEW")
+            Button(window, text=buttons[x-1][y], bg='light blue', borderwidth=0, font=('Arial', 12, 'bold'), command=command).grid(row=x, column=y, padx=1, pady=1,sticky="NSEW")
 window.mainloop()
